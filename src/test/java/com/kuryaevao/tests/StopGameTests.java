@@ -31,12 +31,12 @@ public class StopGameTests extends TestData {
 
         actionPage.openPage();
         actionPage.openLoginForm();
-        actionPage.typeLogin("userTest");
-        actionPage.typePassword("x6Yngdeb");
+        actionPage.typeLogin(siteLogin);
+        actionPage.typePassword(sitePassword);
         actionPage.typeSubmit();
         actionPage.userButton();
         actionPage.userPage();
-        actionPage.userNameCheck("userTest");
+        actionPage.userNameCheck(siteLogin);
     }
 
     @Test
@@ -45,8 +45,8 @@ public class StopGameTests extends TestData {
 
         actionPage.openPage();
         actionPage.openLoginForm();
-        actionPage.typeLogin("userTest");
-        actionPage.typePassword("x6Yngdeb");
+        actionPage.typeLogin(siteLogin);
+        actionPage.typePassword(sitePassword);
         actionPage.typeSubmit();
         actionPage.userButton();
         actionPage.logOutButton();
@@ -110,8 +110,8 @@ public class StopGameTests extends TestData {
 
         actionPage.openPage();
         actionPage.openLoginForm();
-        actionPage.typeLogin("userTest");
-        actionPage.typePassword("x6Yngdeb");
+        actionPage.typeLogin(siteLogin);
+        actionPage.typePassword(sitePassword);
         actionPage.typeSubmit();
         actionPage.userButton();
         actionPage.userPage();
@@ -125,7 +125,7 @@ public class StopGameTests extends TestData {
 
     @Test
     @Tag("noAuthorizationTest")
-    void checkUsers() {
+    void checkUsersTest() {
 
         actionPage.openPage();
         actionPage.searchForUser(fakerUser);

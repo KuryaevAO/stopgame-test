@@ -1,5 +1,14 @@
-# demoqa-tests
+# StopGameTests
 
-link to the testing subject - https://demoqa.com/automation-practice-form
+link to the testing subject - https://stopgame.ru/
 
-fillAllFormsTest - тест на ввод данных пользователя и отправку, а затем на сравнение данных в получнной форме
+openSiteTest
+loginInTest
+logOutTest
+searchTest
+aboutResourceTest
+tagCheckTest
+developerCheckTest
+latestCommentTest
+addGameTest
+checkUsersTest

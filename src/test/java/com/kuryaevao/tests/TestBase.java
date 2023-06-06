@@ -8,6 +8,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase {
 
@@ -36,14 +37,12 @@ public class TestBase {
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        /*
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://"+login+":"+password+"@"+remoteUrl;
-        */
+        Configuration.remote = "https://" + login + ":" + password + "@" + remoteUrl;
     }
 
     @AfterEach
