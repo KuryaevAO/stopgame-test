@@ -24,7 +24,7 @@ public class TestBase {
         String browser = System.getProperty("browser", "chrome");
         String browserSize = System.getProperty("browserSize", "1920x1080");
         String browserVersion = System.getProperty("browserVersion", "100");
-        String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        String baseUrl = System.getProperty("baseUrl", "https://stopgame.ru/");
         String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud/wd/hub/");
         String pageLoadStrategy = System.getProperty("pageLoadStrategy", "eager");
 
