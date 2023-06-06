@@ -2,19 +2,20 @@ package com.kuryaevao.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.kuryaevao.pages.components.CalendarComponent;
 import com.kuryaevao.tests.TestData;
 import io.qameta.allure.Step;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byClassName;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class ActionPage extends TestData {
 
     private final String FORM_TITLE = "https://stopgame.ru";
+    String commentText;
 
     private SelenideElement
             formTitle = $("._header__logo_1je6x_1"),
@@ -25,14 +26,28 @@ public class ActionPage extends TestData {
             typeSubmit = $("[type=submit]"),
             userButton = $("button._header__profile-btn_1je6x_271"),
             userPage = $("._user-menu__profile_pxt36_101 a span"),
-            userLogOut= $("[aria-label='Меню пользователя']").$$("ul li a").findBy(text("Выйти")),
+            userLogOut = $("[aria-label='Меню пользователя']").$$("ul li a").findBy(text("Выйти")),
             userNameOnPage = $("._section_n5f0l_3 h1"),
             searchBar = $("[aria-label=Поиск]"),
             searchByText = $("._search-input__input_eolml_1"),
-            searchCheck = $("[name=s]");
-
-
-    public CalendarComponent calendar = new CalendarComponent();
+            searchCheck = $("[name=s]"),
+            helpPage = $("[aria-label='Разделы сайта']").$$("ul li a").findBy(text("Помощь")),
+            aboutProjectPage = $(".subnav").$$("ul li a").findBy(text("О проекте")),
+            aboutProjectText = $(".main-content .article").$$("p").findBy(text("StopGame — коллектив авторов, который (вопреки своему названию) уже десять лет рассказывает всем желающим о видеоиграх.")),
+            wayToTheGame = $("#w0 [data-key='0'] ._title_sh7r2_151 a"),
+            wayToTheDataInTheGame = $("._card_sh7r2_4 ._info-grid_sh7r2_186"),
+            platformText = $("._content_dmef8_299 h1"),
+            commentsButton = $("[aria-label='Последние комментарии']"),
+            latestComment = $$("._live-comments__scrollable-container_ye4jv_1 a ._live-comment__content_15e65_1").first(),
+            commentCheck = $("#comments"),
+            addGameButton = $("button._primary_1a370_100"),
+            addGameName = $("input._input_lqk7q_1"),
+            addGameResult = $$("button._game_1seij_32").first(),
+            addGameStatus = $("._buttons_1oyf3_27"),
+            addedGameStatus = $("._last-added-grid_n5f0l_582 ._card_13hsk_1 ._status-button_13hsk_92"),
+            userSearch = $$("._search-categories_eolml_176 button").findBy(text("Пользователи")),
+            fullUserSearch = $(byText("Смотреть все")),
+            userList = $("._items-grid_1t2u7_33");
 
     @Step("Открытие страницы")
     public void openPage() {
@@ -70,6 +85,7 @@ public class ActionPage extends TestData {
     public void userButton() {
         userButton.click();
     }
+
     @Step("Переход в меню юзера")
     public void userPage() {
         userPage.click();
@@ -77,7 +93,7 @@ public class ActionPage extends TestData {
 
     @Step("Выход из профиля")
     public void logOutButton() {
-        userLogOut.click();;
+        userLogOut.click();
     }
 
     @Step("Проверка имени юзера на странице юзера")
@@ -96,7 +112,107 @@ public class ActionPage extends TestData {
         searchCheck.shouldHave(Condition.value(value));
     }
 
+    @Step("Переход в раздел Помощь")
+    public void goToHelp() {
+        helpPage.click();
+    }
 
+    @Step("Переход в раздел О проекте")
+    public void goToAboutProject() {
+        aboutProjectPage.click();
+    }
+
+    @Step("Проверка информации О проекте")
+    public void aboutProject() {
+        aboutProjectText.shouldBe(visible);
+    }
+
+    @Step("Открытие игры")
+    public void proceedToTheGame() {
+        wayToTheGame.click();
+    }
+
+    @Step("Проверка разработчика")
+    public void developerCheck(String value) {
+        wayToTheDataInTheGame.$$("._info-grid__value_sh7r2_200 a").findBy(text(value));
+    }
+
+    @Step("Проверка перехода на платформу")
+    public void platformCheck(String value) {
+        wayToTheDataInTheGame.$$("._info-grid__value_sh7r2_200 a").findBy(text(value)).click();
+    }
+
+    @Step("Проверка платформы")
+    public void platformTextCheck() {
+        platformText.shouldHave(text("Недавно добавленные игры на ПК (PC)"));
+    }
+
+    @Step("Нажатие кнопок с последними комментариями")
+    public void commentsButtonCheck() {
+        commentsButton.click();
+    }
+
+    @Step("Выбор последнего комментария")
+    public void latestCommentProceed() {
+        commentText = latestComment.getText();
+        latestComment.click();
+    }
+
+    @Step("Проверка комментария на странице новости")
+    public void latestCommentOnPageCheck() {
+        commentCheck.$$("._comment__body_1eedu_1").findBy(text(commentText));
+    }
+
+    @Step("Нажатие на Добавить игру")
+    public void pressAddGame() {
+        addGameButton.click();
+    }
+
+    @Step("Выбор игры")
+    public void selectAddGame(String value) {
+        addGameName.setValue(value);
+        sleep(5000);
+        actions().sendKeys(Keys.SPACE);
+        sleep(2000);
+        addGameResult.click();
+    }
+
+    @Step("Проставление статуса")
+    public void setStatusToAddGame() {
+        addGameStatus.$$("._button_1oyf3_27").findBy(text("Пройдено")).click();
+    }
+
+    @Step("Обновление страницы")
+    public void refreshPage() {
+        getWebDriver().navigate().refresh();
+    }
+
+    @Step("Проверка наличия игры")
+    public void openAddedGame() {
+        addedGameStatus.click();
+    }
+
+    @Step("Удаление игры")
+    public void deleteAddedGame() {
+        addGameStatus.$$("._button_1oyf3_27").findBy(text("Пройдено")).click();
+    }
+
+    @Step("Поиск юзеров")
+    public void searchForUser(String value) {
+        searchBar.click();
+        userSearch.click();
+        searchByText.setValue(value);
+    }
+
+    @Step("Открытие полного списка юзеров")
+    public void searchForUserList() {
+        fullUserSearch.click();
+    }
+
+    @Step("Проверка наличия имени в результате")
+    public void userListCheck(String value) {
+        userList.$$("div").findBy(text(value));
+    }
 
 
 

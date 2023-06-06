@@ -51,8 +51,14 @@ tasks.withType(Test) {
     }
 }
 
-/*task properties_tests(type: Test) {
+task auth_tests(type: Test) {
     useJUnitPlatform {
-        includeTags "testBaseTest"
+        includeTags "AuthorizationTest"
     }
-}*/
+}
+
+task no_auth_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags "NoAuthorizationTest"
+    }
+}

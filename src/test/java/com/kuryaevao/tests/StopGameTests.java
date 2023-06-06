@@ -8,12 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selenide.$;
 
-
-public class StopGameTests extends TestBase {
+public class StopGameTests extends TestData {
 
     ActionPage actionPage = new ActionPage();
     CredentialsConfig credentials =
@@ -22,7 +18,7 @@ public class StopGameTests extends TestBase {
     String sitePassword = credentials.sitePassword();
 
     @Test
-    @Tag("testBaseTest")
+    @Tag("noAuthorizationTest")
     void openSiteTest() {
 
         actionPage.openPage();
@@ -30,7 +26,7 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
-    @Tag("testBaseTest")
+    @Tag("AuthorizationTest")
     void loginInTest() {
 
         actionPage.openPage();
@@ -44,7 +40,7 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
-    @Tag("testBaseTest")
+    @Tag("AuthorizationTest")
     void logOutTest() {
 
         actionPage.openPage();
@@ -58,11 +54,83 @@ public class StopGameTests extends TestBase {
     }
 
     @ParameterizedTest
+    @Tag("noAuthorizationTest")
     @ValueSource(strings = {"San Andreas", "The Legend of Zelda", "Splinter Cell"})
     public void searchTest(String searchString) {
 
         actionPage.openPage();
         actionPage.searchBar(searchString);
         actionPage.searchCheck(searchString);
+    }
+
+    @Test
+    @Tag("noAuthorizationTest")
+    void aboutResourceTest() {
+
+        actionPage.openPage();
+        actionPage.goToHelp();
+        actionPage.goToAboutProject();
+        actionPage.aboutProject();
+    }
+
+    @Test
+    @Tag("noAuthorizationTest")
+    void tagCheckTest() {
+
+        actionPage.openPage();
+        actionPage.searchBar(gameName);
+        actionPage.proceedToTheGame();
+        actionPage.platformCheck(platformName);
+        actionPage.platformTextCheck();
+    }
+
+    @Test
+    @Tag("noAuthorizationTest")
+    void developerCheckTest() {
+
+        actionPage.openPage();
+        actionPage.searchBar(gameName);
+        actionPage.proceedToTheGame();
+        actionPage.developerCheck(developerName);
+    }
+
+    @Test
+    @Tag("noAuthorizationTest")
+    void latestCommentTest() {
+
+        actionPage.openPage();
+        actionPage.commentsButtonCheck();
+        actionPage.latestCommentProceed();
+        actionPage.latestCommentOnPageCheck();
+    }
+
+    @Test
+    @Tag("AuthorizationTest")
+    void addGameTest() {
+
+        actionPage.openPage();
+        actionPage.openLoginForm();
+        actionPage.typeLogin("userTest");
+        actionPage.typePassword("x6Yngdeb");
+        actionPage.typeSubmit();
+        actionPage.userButton();
+        actionPage.userPage();
+        actionPage.pressAddGame();
+        actionPage.selectAddGame(gameName);
+        actionPage.setStatusToAddGame();
+        actionPage.refreshPage();
+        actionPage.openAddedGame();
+        actionPage.deleteAddedGame();
+    }
+
+    @Test
+    @Tag("noAuthorizationTest")
+    void checkUsers() {
+
+        actionPage.openPage();
+        actionPage.searchForUser(fakerUser);
+        actionPage.searchForUserList();
+        actionPage.userListCheck(fakerUser);
+
     }
 }

@@ -3,12 +3,11 @@ package com.kuryaevao.tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.kuryaevao.helpers.Attach;
+import config.CredentialsConfig;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import config.CredentialsConfig;
-import org.aeonbits.owner.ConfigFactory;
 
 public class TestBase {
 
@@ -25,14 +24,15 @@ public class TestBase {
         String browserSize = System.getProperty("browserSize", "1920x1080");
         String browserVersion = System.getProperty("browserVersion", "100");
         String baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
-        String remoteUrl =  System.getProperty("remoteUrl", "selenoid.autotests.cloud/wd/hub/");
+        String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud/wd/hub/");
+        String pageLoadStrategy = System.getProperty("pageLoadStrategy", "eager");
 
         Configuration.browser = browser;
         Configuration.browserSize = browserSize;
         Configuration.browserVersion = browserVersion;
         Configuration.pageLoadTimeout = 600000;
         Configuration.baseUrl = baseUrl;
-        Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadStrategy = pageLoadStrategy;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
