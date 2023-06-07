@@ -2,8 +2,8 @@ package com.kuryaevao.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.kuryaevao.config.CredentialsConfig;
 import com.kuryaevao.helpers.Attach;
-import config.CredentialsConfig;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -42,7 +42,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://"+login+":"+password+"@"+remoteUrl;
+        Configuration.remote = "https://" + login + ":" + password + "@" + remoteUrl;
     }
 
     @AfterEach
