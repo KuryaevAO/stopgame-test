@@ -8,8 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import static com.kuryaevao.tests.TestData.*;
 
-public class StopGameTests extends TestData {
+
+public class StopGameTests extends TestBase {
 
     ActionPage actionPage = new ActionPage();
     CredentialsConfig credentials =

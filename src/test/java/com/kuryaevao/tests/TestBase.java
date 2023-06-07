@@ -42,7 +42,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://" + login + ":" + password + "@" + remoteUrl;
+        Configuration.remote = "https://"+login+":"+password+"@"+remoteUrl;
     }
 
     @AfterEach
