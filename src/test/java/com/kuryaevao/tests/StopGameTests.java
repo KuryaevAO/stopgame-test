@@ -2,7 +2,10 @@ package com.kuryaevao.tests;
 
 import com.kuryaevao.config.CredentialsConfig;
 import com.kuryaevao.pages.ActionPage;
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Feature;
 import org.aeonbits.owner.ConfigFactory;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,6 +23,9 @@ public class StopGameTests extends TestBase {
     String sitePassword = credentials.sitePassword();
 
     @Test
+    @Feature("Login features")
+    @AllureId("23254")
+    @DisplayName("Login - Logout")
     @Tag("noAuthorizationTest")
     void openSiteTest() {
 
