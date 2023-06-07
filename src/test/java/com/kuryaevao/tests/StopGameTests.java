@@ -29,7 +29,7 @@ public class StopGameTests extends TestBase {
 
     @Test
     @Tag("AuthorizationTest")
-    void loginInTest() {
+    void loginLogoutTest() {
 
         actionPage.openPage();
         actionPage.openLoginForm();
@@ -39,17 +39,6 @@ public class StopGameTests extends TestBase {
         actionPage.userButton();
         actionPage.userPage();
         actionPage.userNameCheck(siteLogin);
-    }
-
-    @Test
-    @Tag("AuthorizationTest")
-    void logOutTest() {
-
-        actionPage.openPage();
-        actionPage.openLoginForm();
-        actionPage.typeLogin(siteLogin);
-        actionPage.typePassword(sitePassword);
-        actionPage.typeSubmit();
         actionPage.userButton();
         actionPage.logOutButton();
         actionPage.openLoginForm();
@@ -123,6 +112,9 @@ public class StopGameTests extends TestBase {
         actionPage.refreshPage();
         actionPage.openAddedGame();
         actionPage.deleteAddedGame();
+        actionPage.refreshPage();
+        actionPage.userButton();
+        actionPage.logOutButton();
     }
 
     @Test
