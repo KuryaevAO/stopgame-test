@@ -53,6 +53,7 @@ public class ActionPage extends TestData {
     public void openPage() {
         open("https://stopgame.ru/");
         formTitle.getAttribute("href").equals(FORM_TITLE);
+        sleep(5000);
     }
 
     @Step("Проверка заголовка")
@@ -202,6 +203,7 @@ public class ActionPage extends TestData {
         searchBar.click();
         userSearch.click();
         searchByText.setValue(value);
+        sleep(5000);
     }
 
     @Step("Открытие полного списка юзеров")
