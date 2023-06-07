@@ -47,7 +47,8 @@ public class ActionPage extends TestData {
             addedGameStatus = $("._last-added-grid_n5f0l_582 ._card_13hsk_1 ._status-button_13hsk_92"),
             userSearch = $$("._search-categories_eolml_176 button").findBy(text("Пользователи")),
             fullUserSearch = $(byText("Смотреть все")),
-            userList = $("._items-grid_1t2u7_33");
+            userList = $("._items-grid_1t2u7_33"),
+            socialNetworkLinks = $("[aria-label='Мы в соц.сетях']");
 
     @Step("Открытие страницы")
     public void openPage() {
@@ -215,6 +216,25 @@ public class ActionPage extends TestData {
     @Step("Проверка наличия имени в результате")
     public void userListCheck(String value) {
         userList.$$("div").findBy(text(value));
+    }
+
+    @Step("Проверка наличия ссылки ВК")
+    public void networkVkCheck() {
+        socialNetworkLinks.scrollTo();
+        socialNetworkLinks.$$("li a").findBy(text("Группа StopGame Вконтакте"));
+        socialNetworkLinks.$$("li a").findBy(text("https://vk.com/stopgameru"));
+    }
+
+    @Step("Проверка наличия ссылки Steam")
+    public void networkSteamCheck() {
+        socialNetworkLinks.$$("li a").findBy(text("Коммьюнити StopGame в Steam"));
+        socialNetworkLinks.$$("li a").findBy(text("https://steamcommunity.com/groups/stopgamecommunity"));
+    }
+
+    @Step("Проверка наличия ссылки Twitch")
+    public void networkTwitchCheck() {
+        socialNetworkLinks.$$("li a").findBy(text("Канал StopGame в Twitch"));
+        socialNetworkLinks.$$("li a").findBy(text("https://www.twitch.tv/stopgameru/"));
     }
 
 

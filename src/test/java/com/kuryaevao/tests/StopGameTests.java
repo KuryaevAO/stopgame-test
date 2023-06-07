@@ -145,7 +145,7 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
-    @Feature("Login features")
+    @Feature("No login features")
     @AllureId("23262")
     @DisplayName("Searching Users")
     @Tag("noAuthorizationTest")
@@ -156,5 +156,18 @@ public class StopGameTests extends TestBase {
         actionPage.searchForUserList();
         actionPage.userListCheck(fakerUser);
 
+    }
+
+    @Test
+    @Feature("No login features")
+    @AllureId("23277")
+    @DisplayName("Social networks check")
+    @Tag("noAuthorizationTest")
+    void checkSocialNetworksTest() {
+
+        actionPage.openPage();
+        actionPage.networkVkCheck();
+        actionPage.networkSteamCheck();
+        actionPage.networkTwitchCheck();
     }
 }
