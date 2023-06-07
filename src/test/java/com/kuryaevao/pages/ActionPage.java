@@ -54,7 +54,7 @@ public class ActionPage extends TestData {
     public void openPage() {
         open("https://stopgame.ru/");
         formTitle.getAttribute("href").equals(FORM_TITLE);
-        sleep(5000);
+        sleep(2000);
     }
 
     @Step("Проверка заголовка")
@@ -66,7 +66,7 @@ public class ActionPage extends TestData {
     public void openLoginForm() {
         loginThumbnail.click();
         sgLogin.click();
-        sleep(5000);
+        sleep(2000);
     }
 
     @Step("Ввод имени")
@@ -174,7 +174,7 @@ public class ActionPage extends TestData {
     @Step("Выбор игры")
     public void selectAddGame(String value) {
         addGameName.setValue(value);
-        sleep(5000);
+        sleep(2000);
         actions().sendKeys(Keys.SPACE);
         sleep(2000);
         addGameResult.click();
@@ -183,6 +183,7 @@ public class ActionPage extends TestData {
     @Step("Проставление статуса")
     public void setStatusToAddGame() {
         addGameStatus.$$("._button_1oyf3_27").findBy(text("Пройдено")).click();
+        sleep(1000);
     }
 
     @Step("Обновление страницы")
@@ -193,6 +194,7 @@ public class ActionPage extends TestData {
     @Step("Проверка наличия игры")
     public void openAddedGame() {
         addedGameStatus.click();
+        sleep(1000);
     }
 
     @Step("Удаление игры")
@@ -205,7 +207,7 @@ public class ActionPage extends TestData {
         searchBar.click();
         userSearch.click();
         searchByText.setValue(value);
-        sleep(5000);
+        sleep(2000);
     }
 
     @Step("Открытие полного списка юзеров")
