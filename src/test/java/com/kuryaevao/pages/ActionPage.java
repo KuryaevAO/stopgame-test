@@ -65,6 +65,7 @@ public class ActionPage extends TestData {
     public void openLoginForm() {
         loginThumbnail.click();
         sgLogin.click();
+        sleep(5000);
     }
 
     @Step("Ввод имени")

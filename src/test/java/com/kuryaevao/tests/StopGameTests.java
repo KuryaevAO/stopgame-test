@@ -23,9 +23,9 @@ public class StopGameTests extends TestBase {
     String sitePassword = credentials.sitePassword();
 
     @Test
-    @Feature("Login features")
-    @AllureId("23254")
-    @DisplayName("Login - Logout")
+    @Feature("No login features")
+    @AllureId("23260")
+    @DisplayName("Open site")
     @Tag("noAuthorizationTest")
     void openSiteTest() {
 
@@ -34,6 +34,9 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
+    @Feature("Login features")
+    @AllureId("23254")
+    @DisplayName("Login - Logout")
     @Tag("AuthorizationTest")
     void loginLogoutTest() {
 
@@ -51,6 +54,9 @@ public class StopGameTests extends TestBase {
     }
 
     @ParameterizedTest
+    @Feature("No login features")
+    @AllureId("23261")
+    @DisplayName("Searching all")
     @Tag("noAuthorizationTest")
     @ValueSource(strings = {"San Andreas", "The Legend of Zelda", "Splinter Cell"})
     public void searchTest(String searchString) {
@@ -61,6 +67,9 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
+    @Feature("No login features")
+    @AllureId("23259")
+    @DisplayName("Open About resource page")
     @Tag("noAuthorizationTest")
     void aboutResourceTest() {
 
@@ -71,6 +80,9 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
+    @Feature("No login features")
+    @AllureId("23258")
+    @DisplayName("Checking tags")
     @Tag("noAuthorizationTest")
     void tagCheckTest() {
 
@@ -82,6 +94,9 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
+    @Feature("No login features")
+    @AllureId("23256")
+    @DisplayName("Checking developers")
     @Tag("noAuthorizationTest")
     void developerCheckTest() {
 
@@ -92,6 +107,9 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
+    @Feature("No login features")
+    @AllureId("23257")
+    @DisplayName("Checking last comment")
     @Tag("noAuthorizationTest")
     void latestCommentTest() {
 
@@ -102,6 +120,9 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
+    @Feature("Login features")
+    @AllureId("23255")
+    @DisplayName("Adding the game to the profile")
     @Tag("AuthorizationTest")
     void addGameTest() {
 
@@ -124,6 +145,9 @@ public class StopGameTests extends TestBase {
     }
 
     @Test
+    @Feature("Login features")
+    @AllureId("23262")
+    @DisplayName("Searching Users")
     @Tag("noAuthorizationTest")
     void checkUsersTest() {
 
