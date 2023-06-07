@@ -69,12 +69,13 @@ public class ActionPage extends TestData {
         sleep(2000);
     }
 
-    @Step("Ввод имени")
+    @Step("Ввод логина")
     public void typeLogin(String value) {
+        sleep(1000);
         typeLogin.setValue(value);
     }
 
-    @Step("Ввод фамилии")
+    @Step("Ввод пароля")
     public void typePassword(String value) {
         typePassword.setValue(value);
     }
@@ -238,74 +239,5 @@ public class ActionPage extends TestData {
         socialNetworkLinks.$$("li a").findBy(text("Канал StopGame в Twitch"));
         socialNetworkLinks.$$("li a").findBy(text("https://www.twitch.tv/stopgameru/"));
     }
-
-
-
-
-
-
-
-
-
-    /*@Step("Ввод почты")
-    public void typeEmail(String value) {
-        emailInput.setValue(value);
-    }
-
-    @Step("Ввод номера телефона")
-    public void typePhone(String value) {
-        phoneInput.setValue(value);
-    }
-
-    @Step("Ввод текущего адрес")
-    public void typeCurrentAddress(String value) {
-        currentAddressInput.setValue(value);
-    }
-
-    @Step("Ввод пола")
-    public void selectGender(String value) {
-        $("#genterWrapper").$(byText(value)).click();
-    }
-
-    @Step("Ввод предмета")
-    public void selectSubject(String value) {
-        subjectInput.setValue(value).pressEnter();
-    }
-
-    @Step("Ввод хобби")
-    public void selectHobbies(String value) {
-        hobbieWrapper.$(byText(value)).click();
-    }
-
-    @Step("Ввод штата")
-    public void selectState(String value) {
-        stateInput.scrollTo().click();
-        stateCityWrapper.$(byText(value)).click();
-    }
-
-    @Step("Ввод города")
-    public void selectCity(String value) {
-        cityInput.click();
-        stateCityWrapper.$(byText(value)).click();
-    }
-
-    @Step("Отправка формы")
-    public void submitForm() {
-        submitInput.scrollTo().pressEnter();
-    }
-
-    @Step("Сверка введенных данных с полученной таблицей")
-    public void createTable() {
-        SelenideElement createdTable = $(byClassName("table-responsive"));
-
-        createdTable.shouldHave(text(firstName + " " + lastName));
-        createdTable.shouldHave(text(userEmail));
-        createdTable.shouldHave(text(userGender));
-        createdTable.shouldHave(text(userNumber));
-        createdTable.shouldHave(text("25 December,1997"));
-        createdTable.shouldHave(text(subject));
-        createdTable.shouldHave(text(hobby));
-        createdTable.shouldHave(text(currentAddress));
-        createdTable.shouldHave(text(userState + " " + userCity));*/
 }
 
