@@ -69,7 +69,7 @@ Allure Reports
 Allure TestOps
 <img src="img/allure_test_ops.png" width=100% height=100%>
 
-<img src="img/tg_logo.png" width=3% height=3%> Также реализована интеграция с ботом Telegram
+<img src="img/tg_logo.png" width=2% height=2%> Также реализована интеграция с ботом Telegram
 
 <img src="img/telegram_bot.png" width=100% height=100%>
 
