@@ -5,6 +5,7 @@
 🎮Данный проект создан для тестирования сайта [StopGame.ru](https://stopgame.ru/)
 
 🛠️Используемый стэк в проекте
+
 <img src="img/gradle_logo.jpg" width=10% height=10%> <img src="img/allure.jpg" width=10% height=10%> <img src="img/intellij.jpg" width=10% height=10%> <img src="img/java.png" width=10% height=10%> <img src="img/jenkins.jpg" width=15.02% height=15.02%> <img src="img/junit5.png" width=10.2% height=10.2%> <img src="img/selenide.jpg" width=10% height=10%>
 ---
 <details>
@@ -68,7 +69,7 @@ Allure Reports
 Allure TestOps
 <img src="img/allure_test_ops.png" width=100% height=100%>
 
-<img src="img/tg_logo.png" width=5% height=5%> Также реализована интеграция с ботом Telegram
+<img src="img/tg_logo.png" width=3% height=3%> Также реализована интеграция с ботом Telegram
 
 <img src="img/telegram_bot.png" width=100% height=100%>
 
