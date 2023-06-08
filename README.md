@@ -7,7 +7,7 @@
 ### 🛠️Используемый стэк в проекте
 
 <img src="img/gradle_logo.jpg" width=10% height=10%> <img src="img/allure.jpg" width=10% height=10%> <img src="img/intellij.jpg" width=10% height=10%> <img src="img/java.png" width=10% height=10%> <img src="img/jenkins.jpg" width=15.02% height=15.02%> <img src="img/junit5.png" width=10.2% height=10.2%> <img src="img/selenide.jpg" width=10% height=10%>
-
+---
 <details>
 <summary>🧰Список тестов в проекте</summary>
 
@@ -42,7 +42,31 @@
 </details>
 
 🤖Пример прохождения теста **addGameTest**:
+
 ![addGameTest](img/stopgame-gif-test.gif)
 
+### 🏗️ Сборка
+
+👨‍✈️ Сборка проекта происходит через Jenkins
+
+<img src="img/jenkins_cloud.png" width=100% height=100%>
+
+⚙️ Также в Jenkins реализован выбор параметров запуска сборки
+
+<img src="img/jenkins_parameters.png" width=100% height=100%>
+
+### 📑 Отчетность
+
+📃 В Jenkins реализована интеграция с Allure
+
+Allure Reports
+<img src="img/allure_report.png" width=100% height=100%>
+
+Allure TestOps
+<img src="img/allure_test_ops.png" width=100% height=100%>
+
+<img src="img/tg_logo.png" width=5% height=5%> Также реализована интеграция с ботом Telegram
+
+<img src="img/telegram_bot.png" width=100% height=100%>
 
 
