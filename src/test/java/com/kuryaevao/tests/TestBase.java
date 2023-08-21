@@ -31,7 +31,6 @@ public class TestBase {
         Configuration.browser = browser;
         Configuration.browserSize = browserSize;
         Configuration.browserVersion = browserVersion;
-        Configuration.pageLoadTimeout = 600000;
         Configuration.baseUrl = baseUrl;
         Configuration.pageLoadStrategy = pageLoadStrategy;
 
