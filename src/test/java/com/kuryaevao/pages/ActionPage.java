@@ -44,7 +44,7 @@ public class ActionPage extends TestData {
             addGameName = $("input._input_160th_1"),
             addGameResult = $$("button._game_6103z_32").first(),
             addGameStatus = $("._buttons_1oyf3_27"),
-            addedGameStatus = $("._last-added-grid_1ggfy_582 ._card_1no86_1 ._status-button_1no86_97"),
+            addedGameStatus = $("._last-added-grid_1ggfy_582 [href='#game-status/colorable/beaten']"),
             userSearch = $("._search-categories_1ner1_176").$("[type='button']", 1),
             fullUserSearch = $(byText("Смотреть все")),
             userList = $("._items-grid_1t2u7_33"),
@@ -84,7 +84,7 @@ public class ActionPage extends TestData {
         typeSubmit.click();
     }
 
-    @Step("Переход в меню юзера")
+    @Step("Переход в подменю юзера")
     public void userButton() {
         userButton.click();
     }
