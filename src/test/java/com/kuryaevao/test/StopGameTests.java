@@ -1,6 +1,8 @@
-package com.kuryaevao.tests;
+package com.kuryaevao.test;
 
 import com.kuryaevao.config.CredentialsConfig;
+import com.kuryaevao.main.java.io.qameta.allure.Layer;
+import com.kuryaevao.main.java.io.qameta.allure.Microservice;
 import com.kuryaevao.pages.ActionPage;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
@@ -11,9 +13,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static com.kuryaevao.tests.TestData.*;
+import static com.kuryaevao.test.TestData.*;
 
-
+@Layer("UI")
 public class StopGameTests extends TestBase {
 
     ActionPage actionPage = new ActionPage();
@@ -27,6 +29,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23260")
     @DisplayName("Open site")
     @Tag("noAuthorizationTest")
+    @Microservice("Basic")
     void openSiteTest() {
 
         actionPage.openPage();
@@ -38,6 +41,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23254")
     @DisplayName("Login - Logout")
     @Tag("AuthorizationTest")
+    @Microservice("Basic")
     void loginLogoutTest() {
 
         actionPage.openPage();
@@ -58,6 +62,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23261")
     @DisplayName("Searching all")
     @Tag("noAuthorizationTest")
+    @Microservice("Basic")
     @ValueSource(strings = {"San Andreas", "The Legend of Zelda", "Splinter Cell"})
     public void searchTest(String searchString) {
 
@@ -71,6 +76,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23259")
     @DisplayName("Open About resource page")
     @Tag("noAuthorizationTest")
+    @Microservice("Additional")
     void aboutResourceTest() {
 
         actionPage.openPage();
@@ -84,6 +90,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23258")
     @DisplayName("Checking tags")
     @Tag("noAuthorizationTest")
+    @Microservice("Additional")
     void tagCheckTest() {
 
         actionPage.openPage();
@@ -98,6 +105,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23256")
     @DisplayName("Checking developers")
     @Tag("noAuthorizationTest")
+    @Microservice("Additional")
     void developerCheckTest() {
 
         actionPage.openPage();
@@ -111,6 +119,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23257")
     @DisplayName("Checking last comment")
     @Tag("noAuthorizationTest")
+    @Microservice("Additional")
     void latestCommentTest() {
 
         actionPage.openPage();
@@ -124,6 +133,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23255")
     @DisplayName("Adding the game to the profile")
     @Tag("AuthorizationTest")
+    @Microservice("Basic")
     void addGameTest() {
 
         actionPage.openPage();
@@ -149,6 +159,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23262")
     @DisplayName("Searching Users")
     @Tag("noAuthorizationTest")
+    @Microservice("Basic")
     void checkUsersTest() {
 
         actionPage.openPage();
@@ -163,6 +174,7 @@ public class StopGameTests extends TestBase {
     @AllureId("23277")
     @DisplayName("Social networks check")
     @Tag("noAuthorizationTest")
+    @Microservice("Additional")
     void checkSocialNetworksTest() {
 
         actionPage.openPage();

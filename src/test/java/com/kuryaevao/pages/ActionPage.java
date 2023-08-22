@@ -2,7 +2,7 @@ package com.kuryaevao.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.kuryaevao.tests.TestData;
+import com.kuryaevao.test.TestData;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 

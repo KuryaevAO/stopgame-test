@@ -1,4 +1,4 @@
-package com.kuryaevao.tests;
+package com.kuryaevao.test;
 
 import com.github.javafaker.Faker;
 

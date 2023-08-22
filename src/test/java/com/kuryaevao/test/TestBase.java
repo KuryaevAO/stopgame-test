@@ -1,4 +1,4 @@
-package com.kuryaevao.tests;
+package com.kuryaevao.test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
