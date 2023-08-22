@@ -2,7 +2,6 @@ package com.kuryaevao.test;
 
 import com.kuryaevao.config.CredentialsConfig;
 import com.kuryaevao.main.java.io.qameta.allure.JiraIssue;
-import com.kuryaevao.main.java.io.qameta.allure.JiraIssues;
 import com.kuryaevao.main.java.io.qameta.allure.Layer;
 import com.kuryaevao.main.java.io.qameta.allure.Microservice;
 import com.kuryaevao.pages.ActionPage;
@@ -18,7 +17,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static com.kuryaevao.test.TestData.*;
 
 @Layer("UI")
-@JiraIssues({@JiraIssue("HOMEWORK-748")})
+@JiraIssue("HOMEWORK-748")
 public class StopGameTests extends TestBase {
 
     ActionPage actionPage = new ActionPage();
