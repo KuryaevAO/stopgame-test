@@ -17,7 +17,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static com.kuryaevao.test.TestData.*;
 
 @Layer("UI")
-@JiraIssue("HOMEWORK-748")
 public class StopGameTests extends TestBase {
 
     ActionPage actionPage = new ActionPage();
@@ -32,6 +31,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Open site")
     @Tag("noAuthorizationTest")
     @Microservice("Basic")
+    @JiraIssue("HOMEWORK-748")
     void openSiteTest() {
 
         actionPage.openPage();
@@ -44,6 +44,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Login - Logout")
     @Tag("AuthorizationTest")
     @Microservice("Basic")
+    @JiraIssue("HOMEWORK-748")
     void loginLogoutTest() {
 
         actionPage.openPage();
@@ -65,6 +66,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Searching all")
     @Tag("noAuthorizationTest")
     @Microservice("Basic")
+    @JiraIssue("HOMEWORK-748")
     @ValueSource(strings = {"San Andreas", "The Legend of Zelda", "Splinter Cell"})
     public void searchTest(String searchString) {
 
@@ -79,6 +81,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Open About resource page")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
+    @JiraIssue("HOMEWORK-748")
     void aboutResourceTest() {
 
         actionPage.openPage();
@@ -93,6 +96,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Checking tags")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
+    @JiraIssue("HOMEWORK-748")
     void tagCheckTest() {
 
         actionPage.openPage();
@@ -108,6 +112,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Checking developers")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
+    @JiraIssue("HOMEWORK-748")
     void developerCheckTest() {
 
         actionPage.openPage();
@@ -122,6 +127,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Checking last comment")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
+    @JiraIssue("HOMEWORK-748")
     void latestCommentTest() {
 
         actionPage.openPage();
@@ -136,6 +142,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Adding the game to the profile")
     @Tag("AuthorizationTest")
     @Microservice("Basic")
+    @JiraIssue("HOMEWORK-748")
     void addGameTest() {
 
         actionPage.openPage();
@@ -162,6 +169,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Searching Users")
     @Tag("noAuthorizationTest")
     @Microservice("Basic")
+    @JiraIssue("HOMEWORK-748")
     void checkUsersTest() {
 
         actionPage.openPage();
@@ -177,6 +185,7 @@ public class StopGameTests extends TestBase {
     @DisplayName("Social networks check")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
+    @JiraIssue("HOMEWORK-748")
     void checkSocialNetworksTest() {
 
         actionPage.openPage();
