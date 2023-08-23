@@ -8,6 +8,7 @@ import com.kuryaevao.main.java.io.qameta.allure.Microservice;
 import com.kuryaevao.pages.ActionPage;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -18,6 +19,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static com.kuryaevao.test.TestData.*;
 
 @Layer("UI")
+@Owner("allure8")
 public class StopGameTests extends TestBase {
 
     ActionPage actionPage = new ActionPage();
