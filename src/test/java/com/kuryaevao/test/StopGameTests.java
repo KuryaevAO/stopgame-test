@@ -8,6 +8,7 @@ import com.kuryaevao.main.java.io.qameta.allure.Microservice;
 import com.kuryaevao.pages.ActionPage;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
 import io.qameta.allure.Owner;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.DisplayName;
@@ -20,6 +21,8 @@ import static com.kuryaevao.test.TestData.*;
 
 @Layer("UI")
 @Owner("allure8")
+@Issue("HOMEWORK-748")
+
 public class StopGameTests extends TestBase {
 
     ActionPage actionPage = new ActionPage();
@@ -34,7 +37,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Open site")
     @Tag("noAuthorizationTest")
     @Microservice("Basic")
-    @JiraIssues({@JiraIssue("https://jira.autotests.cloud/browse/HOMEWORK-748")})
     void openSiteTest() {
 
         actionPage.openPage();
@@ -47,7 +49,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Login - Logout")
     @Tag("AuthorizationTest")
     @Microservice("Basic")
-    @JiraIssues({@JiraIssue("https://jira.autotests.cloud/browse/HOMEWORK-748")})
     void loginLogoutTest() {
 
         actionPage.openPage();
@@ -69,7 +70,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Searching all")
     @Tag("noAuthorizationTest")
     @Microservice("Basic")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     @ValueSource(strings = {"San Andreas", "The Legend of Zelda", "Splinter Cell"})
     public void searchTest(String searchString) {
 
@@ -84,7 +84,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Open About resource page")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     void aboutResourceTest() {
 
         actionPage.openPage();
@@ -99,7 +98,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Checking tags")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     void tagCheckTest() {
 
         actionPage.openPage();
@@ -115,7 +113,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Checking developers")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     void developerCheckTest() {
 
         actionPage.openPage();
@@ -130,7 +127,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Checking last comment")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     void latestCommentTest() {
 
         actionPage.openPage();
@@ -145,7 +141,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Adding the game to the profile")
     @Tag("AuthorizationTest")
     @Microservice("Basic")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     void addGameTest() {
 
         actionPage.openPage();
@@ -172,7 +167,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Searching Users")
     @Tag("noAuthorizationTest")
     @Microservice("Basic")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     void checkUsersTest() {
 
         actionPage.openPage();
@@ -188,7 +182,6 @@ public class StopGameTests extends TestBase {
     @DisplayName("Social networks check")
     @Tag("noAuthorizationTest")
     @Microservice("Additional")
-    @JiraIssues({@JiraIssue("HOMEWORK-748")})
     void checkSocialNetworksTest() {
 
         actionPage.openPage();
