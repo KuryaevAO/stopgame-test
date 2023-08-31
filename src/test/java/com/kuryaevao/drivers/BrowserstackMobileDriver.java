@@ -13,15 +13,15 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
-
-    public static URL getBrowserStackUrl() {
+    public static URL getBrowserstackUrl() {
         try {
-            return new URL(browserstackConfig.baseUrl());
+            return new URL("http://hub.browserstack.com/wd/hub");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
     }
+
+    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
 
     @Nonnull
     @Override
@@ -35,6 +35,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("build", "browserstack-build-1");
         desiredCapabilities.setCapability("name", "first_test");
 
-        return new AndroidDriver(getBrowserStackUrl(), desiredCapabilities);
+        return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
     }
 }
