@@ -2,11 +2,13 @@ package com.kuryaevao.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import com.kuryaevao.config.LocalConfig;
+import groovyjarjarantlr4.v4.runtime.misc.NotNull;
 import io.appium.java_client.android.AndroidDriver;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import javax.annotation.Nonnull;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -27,6 +29,7 @@ public class LocalMobileDriver implements WebDriverProvider {
     }
 
     @Override
+    @Nonnull
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
 
         desiredCapabilities.setCapability("platformName", localConfig.platformName());
