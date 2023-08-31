@@ -13,8 +13,6 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    public static BrowserstackConfig browserStack = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
-
     public static URL getBrowserstackUrl() {
         try {
             return new URL("http://hub.browserstack.com/wd/hub");
@@ -23,23 +21,18 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         }
     }
 
+    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
+
+    @Nonnull
     @Override
-    public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-
-        // Set your access credentials
-        desiredCapabilities.setCapability("browserstack.user", browserStack.user());
-        desiredCapabilities.setCapability("browserstack.key", browserStack.key());
-
-        // Set URL of the application under test
-        desiredCapabilities.setCapability("app", browserStack.app());
-
-        // Specify device and os_version for testing
-        desiredCapabilities.setCapability("device", "Samsung Galaxy S22");
-        desiredCapabilities.setCapability("os_version", "12.0");
-
-        // Set other BrowserStack capabilities
+    public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
+        desiredCapabilities.setCapability("browserstack.user", browserstackConfig.user());
+        desiredCapabilities.setCapability("browserstack.key", browserstackConfig.key());
+        desiredCapabilities.setCapability("app", browserstackConfig.baseUrl());
+        desiredCapabilities.setCapability("device", "Google Pixel 3");
+        desiredCapabilities.setCapability("os_version", "9.0");
         desiredCapabilities.setCapability("project", "First Java Project");
-        desiredCapabilities.setCapability("build", "Java Android");
+        desiredCapabilities.setCapability("build", "browserstack-build-1");
         desiredCapabilities.setCapability("name", "first_test");
 
         return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
