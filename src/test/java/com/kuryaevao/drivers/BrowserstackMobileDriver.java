@@ -11,15 +11,13 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static org.aspectj.weaver.WeaverMessages.format;
-
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
 
     public static URL getBrowserStackUrl() {
         try {
-            return new URL(format("http://%s/wd/hub", browserstackConfig.baseUrl()));
+            return new URL(browserstackConfig.baseUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
