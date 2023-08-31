@@ -11,17 +11,19 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import static org.aspectj.weaver.WeaverMessages.format;
+
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    public static URL getBrowserstackUrl() {
+    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
+
+    public static URL getBrowserStackUrl() {
         try {
-            return new URL("http://hub.browserstack.com/wd/hub");
+            return new URL(format("http://%s/wd/hub", browserstackConfig.baseUrl()));
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
     }
-
-    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
 
     @Nonnull
     @Override
@@ -35,6 +37,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         desiredCapabilities.setCapability("build", "browserstack-build-1");
         desiredCapabilities.setCapability("name", "first_test");
 
-        return new AndroidDriver(getBrowserstackUrl(), desiredCapabilities);
+        return new AndroidDriver(getBrowserStackUrl(), desiredCapabilities);
     }
 }
