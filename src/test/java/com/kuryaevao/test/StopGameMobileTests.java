@@ -2,6 +2,7 @@ package com.kuryaevao.test;
 
 import com.kuryaevao.main.java.io.qameta.allure.Layer;
 import com.kuryaevao.pages.ActionPageMobile;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Owner;
@@ -19,7 +20,7 @@ public class StopGameMobileTests extends TestBaseMobile {
 
     @Test
     @Feature("Mobile features")
-    //@AllureId("23260")
+    @AllureId("25561")
     @DisplayName("Translation text")
     @Tag("test_mobile")
     void TranslationTest() {
@@ -30,7 +31,7 @@ public class StopGameMobileTests extends TestBaseMobile {
 
     @Test
     @Feature("Mobile features")
-    //@AllureId("23260")
+    @AllureId("25563")
     @DisplayName("Switching language")
     @Tag("test_mobile")
     void SwitchingLanguageTest() {
@@ -41,7 +42,7 @@ public class StopGameMobileTests extends TestBaseMobile {
 
     @Test
     @Feature("Mobile features")
-    //@AllureId("23260")
+    @AllureId("25562")
     @DisplayName("Open Settings")
     @Tag("test_mobile")
     void OpeningSettingsTest() {

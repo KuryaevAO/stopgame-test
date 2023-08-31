@@ -2,6 +2,7 @@ package com.kuryaevao.test;
 
 import com.kuryaevao.main.java.io.qameta.allure.Layer;
 import com.kuryaevao.pages.ActionPageAPI;
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Owner;
@@ -19,7 +20,7 @@ public class StopGameAPITests {
 
     @Test
     @Feature("API features")
-    //@AllureId("23260")
+    @AllureId("#25559")
     @DisplayName("Login via API")
     @Tag("test_api")
     void loginViaApiTest() {
@@ -29,7 +30,7 @@ public class StopGameAPITests {
 
     @Test
     @Feature("API features")
-    //@AllureId("23260")
+    @AllureId("25560")
     @DisplayName("Add the game via API - authorized")
     @Tag("test_api")
     void AddTheGameViaApiTest() {
@@ -40,7 +41,7 @@ public class StopGameAPITests {
 
     @Test
     @Feature("API features")
-    //@AllureId("23260")
+    @AllureId("25558")
     @DisplayName("Add the game via API - not authorized")
     @Tag("test_api")
     void AddTheGameViaApiNoAuthTest() {
@@ -50,7 +51,7 @@ public class StopGameAPITests {
 
     @Test
     @Feature("API features")
-    //@AllureId("23260")
+    @AllureId("25556")
     @DisplayName("Add the news to favourite via API - authorized")
     @Tag("test_api")
     void AddToFavouritesViaApiAuthTest() {
@@ -61,8 +62,8 @@ public class StopGameAPITests {
 
     @Test
     @Feature("API features")
-    //@AllureId("23260")
-    @DisplayName("Add the news to favourite via API - authorized")
+    @AllureId("25557")
+    @DisplayName("Add the news to favourite via API - not authorized")
     @Tag("test_api")
     void AddToFavouritesViaApiNoAuthTest() {
 
