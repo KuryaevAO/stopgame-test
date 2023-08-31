@@ -17,7 +17,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static URL getBrowserstackUrl() {
         try {
-            return new URL("http://hub.browserstack.com/wd/hub");
+            return new URL(browserstackConfig.baseUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -26,11 +26,11 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-        desiredCapabilities.setCapability("browserstack.user", "bsuser_1OJ9N2");
-        desiredCapabilities.setCapability("browserstack.key", "cisFaQZhozvkbyLtEswe");
+        desiredCapabilities.setCapability("browserstack.user", browserstackConfig.user());
+        desiredCapabilities.setCapability("browserstack.key", browserstackConfig.key());
         desiredCapabilities.setCapability("app", browserstackConfig.app());
-        desiredCapabilities.setCapability("device", "Google Pixel 3");
-        desiredCapabilities.setCapability("os_version", "9.0");
+        desiredCapabilities.setCapability("device", "Samsung Galaxy S22");
+        desiredCapabilities.setCapability("os_version", "12.0");
         desiredCapabilities.setCapability("project", "First Java Project");
         desiredCapabilities.setCapability("build", "browserstack-build-1");
         desiredCapabilities.setCapability("name", "first_test");
