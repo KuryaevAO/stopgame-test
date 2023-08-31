@@ -57,10 +57,5 @@ public class TestBaseMobile {
 
         closeWebDriver();
 
-
-        if (deviceHost.equals("browserstack")) {
-            Attach.videoBrowserStack(sessionId);
-        }
-
     }
 }
