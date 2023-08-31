@@ -29,6 +29,13 @@ public class Attach {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
+    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
+    public static String videoBrowserStack(String sessionId) {
+        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+                + BrowserStack.videoUrl(sessionId)
+                + "' type='video/mp4'></video></body></html>";
+    }
+
     public static void browserConsoleLogs() {
         attachAsText(
                 "Browser console logs",

@@ -8,4 +8,5 @@ public interface CredentialsConfig extends Config {
     String password();
     String siteLogin();
     String sitePassword();
+    String userToken();
 }
