@@ -6,8 +6,10 @@
 
 🛠️Используемый стэк в проекте
 
-<img src="img/gradle_logo.jpg" width=10% height=10%> <img src="img/allure.jpg" width=10% height=10%> <img src="img/intellij.jpg" width=10% height=10%> <img src="img/java.png" width=10% height=10%> <img src="img/jenkins.jpg" width=15.02% height=15.02%> <img src="img/junit5.png" width=10.2% height=10.2%> <img src="img/selenide.jpg" width=10% height=10%> <img src="img/jira_logo.png" width=10% height=10%> <img src="img/img/appium_logo.png" width=10% height=10%> <img src="img/img/Rest-assured_logo.jpg" width=10% height=10%>
+<img src="img/gradle_logo.jpg" width=10% height=10%> <img src="img/allure.jpg" width=10% height=10%> <img src="img/intellij.jpg" width=10% height=10%> <img src="img/java.png" width=10% height=10%> <img src="img/jenkins.jpg" width=15.02% height=15.02%> <img src="img/junit5.png" width=10.2% height=10.2%> <img src="img/selenide.jpg" width=10% height=10%> <img src="img/jira_logo.png" width=16.5% height=16.5%> <img src="img/appium_logo.png" width=10.45% height=10.45%> <img src="img/Rest-assured_logo.jpg" width=10% height=10%>
+
 ---
+
 <details>
 <summary>🧰Список тестов в проекте</summary>
 
@@ -110,14 +112,23 @@ Allure Reports
 Allure TestOps
 <img src="img/allure_test_ops.png" width=100% height=100%>
 
-Allure TestOps dashboards
+Allure TestOps Dashboards
 <img src="img/allure_test_ops_dashboard.png" width=100% height=100%>
 <img src="img/allure_test_ops_dashboard2.png" width=100% height=100%>
 
+---
 
-<img src="img/tg_logo.png" width=2% height=2%> Также реализована интеграция с ботом Telegram
+📉 Реализована интеграция с Jira
 
-<img src="img/telegram_bot.png" width=100% height=100%>
+
+<img src="img/jira.png" width=100% height=100%>
+
+---
+
+<img src="img/tg_logo.png" width=1.55% height=1.55%> Также реализована интеграция с ботом Telegram
+
+
+<img src="img/telegram_bot.png" width=70% height=70%>
 
 
 
