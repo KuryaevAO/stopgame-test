@@ -25,7 +25,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     @Nonnull
     @Override
-    public WebDriver createDriver(@Nonnull DesiredCapabilities desiredCapabilities) {
+    public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("browserstack.user", browserstackConfig.user());
         desiredCapabilities.setCapability("browserstack.key", browserstackConfig.key());
         desiredCapabilities.setCapability("app", browserstackConfig.baseUrl());
