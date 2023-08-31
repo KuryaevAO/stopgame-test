@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.kuryaevao.helpers.Attach.getSessionId;
 
-public class TestBaseMobile {
+public class TestBaseMobile extends BrowserstackMobileDriver {
 
     public static String deviceHost = System.getProperty("deviceHost");
 

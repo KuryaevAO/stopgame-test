@@ -13,6 +13,8 @@ import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
+    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
+
     public static URL getBrowserstackUrl() {
         try {
             return new URL("http://hub.browserstack.com/wd/hub");
@@ -21,14 +23,12 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         }
     }
 
-    public static BrowserstackConfig browserstackConfig = ConfigFactory.create(BrowserstackConfig.class);
-
     @Nonnull
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
         desiredCapabilities.setCapability("browserstack.user", browserstackConfig.user());
         desiredCapabilities.setCapability("browserstack.key", browserstackConfig.key());
-        desiredCapabilities.setCapability("app", browserstackConfig.baseUrl());
+        desiredCapabilities.setCapability("app", browserstackConfig.app());
         desiredCapabilities.setCapability("device", "Google Pixel 3");
         desiredCapabilities.setCapability("os_version", "9.0");
         desiredCapabilities.setCapability("project", "First Java Project");
