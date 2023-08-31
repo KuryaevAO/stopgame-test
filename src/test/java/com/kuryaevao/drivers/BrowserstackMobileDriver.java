@@ -26,8 +26,8 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(DesiredCapabilities desiredCapabilities) {
-        desiredCapabilities.setCapability("browserstack.user", browserstackConfig.user());
-        desiredCapabilities.setCapability("browserstack.key", browserstackConfig.key());
+        desiredCapabilities.setCapability("browserstack.user", "bsuser_1OJ9N2");
+        desiredCapabilities.setCapability("browserstack.key", "cisFaQZhozvkbyLtEswe");
         desiredCapabilities.setCapability("app", browserstackConfig.app());
         desiredCapabilities.setCapability("device", "Google Pixel 3");
         desiredCapabilities.setCapability("os_version", "9.0");
